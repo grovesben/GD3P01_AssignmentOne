@@ -1,12 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "NiagaraFunctionLibrary.h"
-#include "NiagaraComponent.h"
-#include "Item.generated.h"
+#include "LootItem.generated.h"
 
 /* Enum for all items type */
 UENUM(BlueprintType)
@@ -22,7 +20,6 @@ enum class EItemType : uint8
 	Potion,
 	DEFAULT
 };
-
 
 /* Struct for holding details for items (type, rarity, value)*/
 USTRUCT(BlueprintType)
@@ -44,29 +41,30 @@ struct FItemDetails
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UTexture2D* IconTexture = nullptr;
-	
-	UPROPERTY(EditAnywhere)
-	class UStaticMeshComponent* Mesh = nullptr;
 };
 
 UCLASS()
-class PROTOTYPE_ONE_API AItem : public AActor
+class LOOTOOL_API ALootItem : public AActor
 {
 	GENERATED_BODY()
 
-public:
-	// Sets default values for this actor's properties
-	AItem();
+public: 
+	/* Constructor */
+	ALootItem();
 
 protected:
-	// Called when the game starts or when spawned
+	/* Called when the game starts or when spawned */
 	virtual void BeginPlay() override;
 
 public:
-	// Called every frame
+	/* Called every frame */
 	virtual void Tick(float DeltaTime) override;
 
-public:
+	/* Struct holding the loot items details */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	FItemDetails ItemDetails;
+
+	/* Static Mesh for the model of the item */		
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* Mesh = nullptr;
 };
