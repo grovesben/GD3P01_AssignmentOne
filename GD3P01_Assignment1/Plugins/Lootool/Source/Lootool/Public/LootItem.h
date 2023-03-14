@@ -10,6 +10,7 @@
 UENUM(BlueprintType)
 enum class EItemType : uint8
 {
+	/* grouping some types and replace with names */
 	Pebble,
 	Stick,
 	Carrot,
@@ -18,6 +19,13 @@ enum class EItemType : uint8
 	Mask,
 	Crown,
 	Potion,
+	/* ------------------------------------------- */
+	
+	Trash,
+	BunnyBait,
+	MaskedBait,
+	KingBait,
+	Useable,
 	DEFAULT
 };
 
@@ -67,4 +75,7 @@ public:
 	/* Static Mesh for the model of the item */		
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* Mesh = nullptr;
+
+	UPROPERTY(BlueprintReadWrite)
+	FName ItemName;
 };

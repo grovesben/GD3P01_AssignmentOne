@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -6,12 +5,21 @@
 #include "EditorUtilityWidget.h"
 #include "LootoolEditorWidget.generated.h"
 
-/**
- * 
- */
-UCLASS()
+UCLASS(BlueprintType)
 class LOOTOOL_API ULootoolEditorWidget : public UEditorUtilityWidget
 {
 	GENERATED_BODY()
-	
+public:
+	ULootoolEditorWidget();
+	~ULootoolEditorWidget();
+protected:
+	virtual void NativePreConstruct() override;
+
+public:
+	UFUNCTION(BlueprintCallable)
+	TArray<UClass*> GetAllLootItems();
+public:
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	class UVerticalBox* ListOfItems;
+
 };

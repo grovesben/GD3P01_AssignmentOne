@@ -25,9 +25,12 @@ public class Lootool : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", 
+				"Core",
+				"Engine",
+				"UnrealEd",
 				"Blutility",
 				"UMG",
+				"UMGEditor"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
