@@ -12,14 +12,24 @@ class LOOTOOL_API ULootoolEditorWidget : public UEditorUtilityWidget
 public:
 	ULootoolEditorWidget();
 	~ULootoolEditorWidget();
+	
 protected:
 	virtual void NativePreConstruct() override;
 
 public:
 	UFUNCTION(BlueprintCallable)
-	TArray<UClass*> GetAllLootItems();
+	FString GetTableAsString();
+
+	UFUNCTION(BlueprintCallable)
+	void AddItem(FName Name, FItemDetails ItemDetails);
+
+	UFUNCTION(BlueprintCallable)
+	void RemoveItem(FName Name);
+	
 public:
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	class UVerticalBox* ListOfItems;
 
+	UPROPERTY(BlueprintReadWrite)
+	class UDataTable* LootData;
 };

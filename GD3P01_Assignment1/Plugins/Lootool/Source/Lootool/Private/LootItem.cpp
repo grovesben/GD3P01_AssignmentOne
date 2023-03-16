@@ -12,12 +12,15 @@ ALootItem::ALootItem()
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	RootComponent = Mesh;
+
+	LootItemComponent = CreateDefaultSubobject<ULootItemComponent>("LootItemComponent");
 }
 
 // Called when the game starts or when spawned
 void ALootItem::BeginPlay()
 {
 	Super::BeginPlay();
+
 }
 
 // Called every frame

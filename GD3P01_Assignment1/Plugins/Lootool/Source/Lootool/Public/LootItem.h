@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "LootItemComponent.h"
 #include "GameFramework/Actor.h"
 #include "LootItem.generated.h"
 
@@ -10,7 +11,7 @@
 UENUM(BlueprintType)
 enum class EItemType : uint8
 {
-	/* grouping some types and replace with names */
+	/*grouping some types and replace with names #1#
 	Pebble,
 	Stick,
 	Carrot,
@@ -31,15 +32,17 @@ enum class EItemType : uint8
 
 /* Struct for holding details for items (type, rarity, value)*/
 USTRUCT(BlueprintType)
-struct FItemDetails
+struct FItemDetails : public FTableRowBase
 {
 	GENERATED_BODY()
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText Name;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EItemType Type = EItemType::DEFAULT;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Value = 0;
+	int32 ValueAmount = 0;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 MaximumStackSize = 0;
@@ -68,14 +71,16 @@ public:
 	/* Called every frame */
 	virtual void Tick(float DeltaTime) override;
 
-	/* Struct holding the loot items details */
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	FItemDetails ItemDetails;
+	///* Struct holding the loot items details */
+	//UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	//FItemDetails ItemDetails;
 
 	/* Static Mesh for the model of the item */		
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* Mesh = nullptr;
 
-	UPROPERTY(BlueprintReadWrite)
-	FName ItemName;
+	UPROPERTY(EditAnywhere)
+	ULootItemComponent* LootItemComponent;
+
+	class UDataTable* TestDataTable;
 };

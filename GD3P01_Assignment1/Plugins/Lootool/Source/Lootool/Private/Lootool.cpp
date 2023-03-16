@@ -2,11 +2,14 @@
 
 #include "Lootool.h"
 
+#include "LootItem.h"
+
 #define LOCTEXT_NAMESPACE "FLootoolModule"
 
 void FLootoolModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
+	
 }
 
 void FLootoolModule::ShutdownModule()
