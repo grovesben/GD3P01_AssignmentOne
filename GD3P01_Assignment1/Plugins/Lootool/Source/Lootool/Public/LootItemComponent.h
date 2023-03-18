@@ -27,7 +27,7 @@ public:
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FDataTableRowHandle ItemID;
+	FName ItemID;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 Quantity = 1;

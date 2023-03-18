@@ -5,6 +5,7 @@
 #include "LootItem.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Components/VerticalBox.h"
+#include "Components/Button.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet2/KismetEditorUtilities.h"
 

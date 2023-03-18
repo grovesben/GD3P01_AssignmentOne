@@ -12,15 +12,3 @@ void UItemWidget::NativePreConstruct()
 	
 	Details->SetObject(this);
 }
-
-void UItemWidget::SetDetailsVisibility(bool bIsVisible)
-{
-	if (bIsVisible)
-	{
-		Details->SetVisibility(ESlateVisibility::Visible);
-	}
-	else
-	{
-		Details->SetVisibility(ESlateVisibility::Hidden);
-	}
-}

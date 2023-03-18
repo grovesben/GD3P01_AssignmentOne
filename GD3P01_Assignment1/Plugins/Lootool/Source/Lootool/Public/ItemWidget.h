@@ -13,12 +13,8 @@ class LOOTOOL_API UItemWidget : public UUserWidget
 
 	virtual void NativePreConstruct() override;
 public:
-	UFUNCTION(BlueprintCallable)
-	void SetDetailsVisibility(bool bIsVisible);
-	
-public:
 	UPROPERTY(BlueprintReadWrite, Category = Default, meta = (ExposeOnSpawn=true))
-	UDataTable* DataTable;
+	UDataTable* LootData;
 	
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	class UDetailsView* Details;

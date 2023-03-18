@@ -2,7 +2,7 @@
 
 
 #include "LootItem.h"
-
+#include "LootItemComponent.h"
 
 // Sets default values
 ALootItem::ALootItem()
@@ -12,8 +12,6 @@ ALootItem::ALootItem()
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	RootComponent = Mesh;
-
-	LootItemComponent = CreateDefaultSubobject<ULootItemComponent>("LootItemComponent");
 }
 
 // Called when the game starts or when spawned

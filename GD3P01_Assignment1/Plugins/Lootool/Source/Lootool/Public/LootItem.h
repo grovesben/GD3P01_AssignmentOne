@@ -11,17 +11,6 @@
 UENUM(BlueprintType)
 enum class EItemType : uint8
 {
-	/*grouping some types and replace with names #1#
-	Pebble,
-	Stick,
-	Carrot,
-	Meat,
-	Antler,
-	Mask,
-	Crown,
-	Potion,
-	/* ------------------------------------------- */
-	
 	Trash,
 	BunnyBait,
 	MaskedBait,
@@ -52,6 +41,9 @@ struct FItemDetails : public FTableRowBase
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UTexture2D* IconTexture = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Rarity = 0;
 };
 
 UCLASS()
@@ -71,16 +63,10 @@ public:
 	/* Called every frame */
 	virtual void Tick(float DeltaTime) override;
 
-	///* Struct holding the loot items details */
-	//UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	//FItemDetails ItemDetails;
-
 	/* Static Mesh for the model of the item */		
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* Mesh = nullptr;
 
-	UPROPERTY(EditAnywhere)
-	ULootItemComponent* LootItemComponent;
-
-	class UDataTable* TestDataTable;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	FName LootID;
 };

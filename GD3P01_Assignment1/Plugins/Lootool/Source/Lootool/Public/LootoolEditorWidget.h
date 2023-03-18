@@ -20,11 +20,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 	FString GetTableAsString();
 
+	/* Adds items, and can also be used to edit existing items */
 	UFUNCTION(BlueprintCallable)
 	void AddItem(FName Name, FItemDetails ItemDetails);
 
 	UFUNCTION(BlueprintCallable)
 	void RemoveItem(FName Name);
+
 	
 public:
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
@@ -32,4 +34,13 @@ public:
 
 	UPROPERTY(BlueprintReadWrite)
 	class UDataTable* LootData;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	class UButton* AddLootItem;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	class UButton* RemoveLootItem;
+	
+	UPROPERTY(BlueprintReadWrite)
+	FName SelectedItemID;
 };
