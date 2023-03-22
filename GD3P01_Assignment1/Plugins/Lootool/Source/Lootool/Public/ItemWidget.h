@@ -1,4 +1,4 @@
-
+// Benjamin Bartlett | Media Design School | GD3P01 Assignment 1
 #pragma once
 
 #include "CoreMinimal.h"
@@ -13,12 +13,12 @@ class LOOTOOL_API UItemWidget : public UUserWidget
 
 	virtual void NativePreConstruct() override;
 public:
-	UPROPERTY(BlueprintReadWrite, Category = Default, meta = (ExposeOnSpawn=true))
+	UPROPERTY(BlueprintReadWrite, Category= "Lootool", meta = (ExposeOnSpawn=true))
 	UDataTable* LootData;
 	
-	UPROPERTY(EditAnywhere, meta = (BindWidget))
+	UPROPERTY(EditAnywhere, Category= "Lootool", meta = (BindWidget))
 	class UDetailsView* Details;
 
-	UPROPERTY(BlueprintReadWrite, Category = Default, meta = (ExposeOnSpawn=true))
+	UPROPERTY(BlueprintReadWrite, Category= "Lootool", meta = (ExposeOnSpawn=true))
 	FName ItemID;
 };
