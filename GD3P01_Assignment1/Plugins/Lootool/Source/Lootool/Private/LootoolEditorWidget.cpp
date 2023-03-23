@@ -41,35 +41,35 @@ void ULootoolEditorWidget::RemoveItem(FName LootID)
 {
 	LootData->RemoveRow(LootID);
 }
-// Unstable..
-// void ULootoolEditorWidget::GenerateBP()
-// {
-// 	FString Source = "/Lootool/BP_LootItem_TEMPLATE.BP_LootItem_TEMPLATE";
-// 	FString Destination = "/Game/LootItems/BP_" + SelectedItemID.ToString();
-// 	
-// 	UEditorAssetSubsystem* EditorAssetSubsystem = GEditor->GetEditorSubsystem<UEditorAssetSubsystem>();
-//
-// 	UObject* NewObject = EditorAssetSubsystem->DuplicateAsset(Source,Destination);
-// 	if (ALootItem* LootItem = Cast<ALootItem>(NewObject))
-// 	{
-// 		UClass* PropertyClass = UNameProperty::StaticClass();
-// 		FName LootIDName = "LootID";
-// 		FProperty* Property = new FProperty(LootItem, LootIDName, EObjectFlags::RF_Transient);
-//
-// 		FName* Value{};
-// 		if (UKismetSystemLibrary::Generic_GetEditorProperty(LootItem, Property, Value, Property))
-// 		{
-// 			UE_LOG(LogTemp, Warning, TEXT("____________________________________succes, %s"), *Value->ToString());
-// 		}
-// 		else
-// 		{
-// 			UE_LOG(LogTemp, Warning, TEXT("fail__________________________________________"));
-// 		}
-//
-// 		/*LootItem->InitLootItem(SelectedItemID);*/
-// 	}
-// 	else
-// 	{
-// 		UE_LOG(LogTemp, Warning, TEXT("fail_______________________big___________________"));
-// 	}
-// }
+ // //Unstable..
+ // void ULootoolEditorWidget::GenerateBP()
+ // {
+ // 	FString Source = "/Lootool/BP_LootItem_TEMPLATE.BP_LootItem_TEMPLATE";
+ // 	FString Destination = "/Game/LootItems/BP_" + SelectedItemID.ToString();
+ // 	
+ // 	UEditorAssetSubsystem* EditorAssetSubsystem = GEditor->GetEditorSubsystem<UEditorAssetSubsystem>();
+ //
+ // 	UObject* NewObject = EditorAssetSubsystem->DuplicateAsset(Source,Destination);
+ // 	if (ALootItem* LootItem = Cast<ALootItem>(NewObject))
+ // 	{
+ // 		UClass* PropertyClass = UNameProperty::StaticClass();
+ // 		FName LootIDName = "LootID";
+ // 		FProperty* Property = new FProperty(LootItem, LootIDName, EObjectFlags::RF_Transient);
+ //
+ // 		FName* Value{};
+ // 		if (UKismetSystemLibrary::Generic_GetEditorProperty(LootItem, Property, Value, Property))
+ // 		{
+ // 			UE_LOG(LogTemp, Warning, TEXT("____________________________________succes, %s"), *Value->ToString());
+ // 		}
+ // 		else
+ // 		{
+ // 			UE_LOG(LogTemp, Warning, TEXT("fail__________________________________________"));
+ // 		}
+ //
+ // 		/*LootItem->InitLootItem(SelectedItemID);*/
+ // 	}
+ // 	else
+ // 	{
+ // 		UE_LOG(LogTemp, Warning, TEXT("fail_______________________big___________________"));
+ // 	}
+ //}

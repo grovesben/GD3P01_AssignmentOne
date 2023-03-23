@@ -40,9 +40,6 @@ struct FItemDetails : public FTableRowBase
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category= "Lootool")
 	UTexture2D* IconTexture = nullptr;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Lootool")
-	int32 Rarity = 0;
 };
 
 UCLASS()
